@@ -17,25 +17,25 @@ from scale_factor.basic_quantity import Length, Mass, CustomTime
 def example_usage():
     # 创建 Length、Mass 和 CustomTime 实例
     scale_ratio = 10  # 缩尺比为10
-    length = Length(scale_ratio)
-    mass = Mass(scale_ratio)
-    time = CustomTime(scale_ratio)
+    length = Length(5, scale_ratio)
+    mass = Mass(4, scale_ratio)
+    time = CustomTime(3, scale_ratio)
 
     # 示例：面积
     area = length * length  # or area=length**2
-    print(f"area : {area.scale_factor}")
+    print(f"area : {1/area.scale_factor}")
 
     # 示例：体积
     volume = length**3
-    print(f"volume : {volume.scale_factor}")
+    print(f"volume : {1/volume.scale_factor}")
 
     # 示例：速度
     velocity = length/time
-    print(f"velocity : {velocity.scale_factor}")
+    print(f"velocity : {1/velocity.scale_factor}")
 
     # 示例：力
     force = mass*length/time**2
-    print(f"force : {force.scale_factor}")
+    print(f"force : {1/force.scale_factor}")
 
 
 if __name__ == '__main__':

@@ -3,9 +3,12 @@
 """
 from scale_factor.basic_quantity import (Length, CustomTime, Mass)
 
-scale_ratio = 1
-length = Length(scale_ratio)
-time = CustomTime(scale_ratio)
-mass = Mass(scale_ratio)
+# 设置缩尺比为1:10
+scale_factor = 10
+length = Length(10, scale_factor)  # 长度的值为10
+time = CustomTime(5, scale_factor)  # 时间的值为5
+velocity = length/time  # 通过数学运算得到速度类
+value = velocity
 
-print(length.scale_factor, time.scale_factor, mass.scale_factor)
+print(rf"{value.scale_value}= {value.value} * {1/value.scale_factor}")
+# print(length.scale_factor, time.scale_factor, mass.scale_factor)

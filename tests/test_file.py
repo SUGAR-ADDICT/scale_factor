@@ -8,9 +8,9 @@ class TestScaleFactor(unittest.TestCase):
         self.scale_factor = 10
 
         # 实例化各个类
-        self.length = Length(self.scale_factor)
-        self.mass = Mass(self.scale_factor)
-        self.time = CustomTime(self.scale_factor)
+        self.length = Length(3, self.scale_factor)
+        self.mass = Mass(6, self.scale_factor)
+        self.time = CustomTime(9, self.scale_factor)
 
     def test_length_multiplication(self):
         # 测试长度乘法
