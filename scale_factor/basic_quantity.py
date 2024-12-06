@@ -20,3 +20,17 @@ class Mass(MateQuantity):
 class CustomTime(MateQuantity):
     def __init__(self, value, scale_factor: float) -> None:
         super().__init__(value, scale_factor**0.5)
+
+
+def custom_quantity(value, custom_dimension: MateQuantity):
+    """
+    通过值和单位，获取自定量纲的MateQuantity对象
+
+    Args:
+        value (float): 单位的数量值
+        custom_dimension (MateQuantity): 包含缩尺比的MateQuantity对象，值为1
+
+    Returns:
+        MateQuantity: 自定义量纲
+    """
+    return MateQuantity(value, custom_dimension.scale_factor)
